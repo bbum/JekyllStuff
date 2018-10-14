@@ -1,0 +1,19 @@
+//
+//  Hyde.pch
+//  Hyde
+//
+//  Created by William Bumgarner on 10/14/18.
+//  Copyright © 2018 Bill Bumgarner. All rights reserved.
+//
+
+#ifndef Hyde_pch
+#define Hyde_pch
+
+#import <Cocoa/Cocoa.h>
+
+#import "HyUtilities.h"
+#import "HyConfigurationManager.h"
+
+#import "HyTableView.h"
+
+#endif /* Hyde_pch */

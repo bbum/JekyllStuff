@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Hyde
+
+  Created by William Bumgarner on 10/14/18.
+  Copyright © 2018 Bill Bumgarner. All rights reserved.
+*/
+
+/* Preferences UI */
+"LOC_PREF_OPEN_PANEL_BUTTON_TITLE" = "Select";
+
