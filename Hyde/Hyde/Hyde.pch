@@ -13,6 +13,9 @@
 
 #import "HyUtilities.h"
 #import "HyConfigurationManager.h"
+#import "HyPostsCollectionsManager.h"
+#import "HyPostsCollection.h"
+
 
 #import "HyTableView.h"
 

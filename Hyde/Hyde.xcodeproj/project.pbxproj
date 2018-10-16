@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3AF4196C2173235F008E9C2A /* HyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4196B2173235F008E9C2A /* HyAppDelegate.m */; };
 		3AF4196F2173235F008E9C2A /* HyMDDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4196E2173235F008E9C2A /* HyMDDocument.m */; };
-		3AF419722173235F008E9C2A /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF419702173235F008E9C2A /* Document.xib */; };
+		3AF419722173235F008E9C2A /* HyMDDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF419702173235F008E9C2A /* HyMDDocument.xib */; };
 		3AF419742173235F008E9C2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF419732173235F008E9C2A /* Assets.xcassets */; };
 		3AF419772173235F008E9C2A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF419752173235F008E9C2A /* MainMenu.xib */; };
 		3AF4197A2173235F008E9C2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF419792173235F008E9C2A /* main.m */; };
@@ -20,6 +20,10 @@
 		3AF4199B2173A106008E9C2A /* HyConfigurationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF4199A2173A106008E9C2A /* HyConfigurationManager.m */; };
 		3AF4199F2173A579008E9C2A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AF419A12173A579008E9C2A /* Localizable.strings */; };
 		3AF419A52173B9BA008E9C2A /* HyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF419A42173B9BA008E9C2A /* HyTableView.m */; };
+		3AF419A72173E248008E9C2A /* HyDocumentCreator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF419A62173E248008E9C2A /* HyDocumentCreator.xib */; };
+		3AF419AA2173E811008E9C2A /* HyDocumentCreatorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF419A92173E811008E9C2A /* HyDocumentCreatorWindowController.m */; };
+		3AF419B2217430D5008E9C2A /* HyPostsCollectionsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF419B1217430D5008E9C2A /* HyPostsCollectionsManager.m */; };
+		3AF419B521743309008E9C2A /* HyPostsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF419B421743309008E9C2A /* HyPostsCollection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +32,7 @@
 		3AF4196B2173235F008E9C2A /* HyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyAppDelegate.m; sourceTree = "<group>"; };
 		3AF4196D2173235F008E9C2A /* HyMDDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyMDDocument.h; sourceTree = "<group>"; };
 		3AF4196E2173235F008E9C2A /* HyMDDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyMDDocument.m; sourceTree = "<group>"; };
-		3AF419712173235F008E9C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		3AF419712173235F008E9C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HyMDDocument.xib; sourceTree = "<group>"; };
 		3AF419732173235F008E9C2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AF419762173235F008E9C2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3AF419782173235F008E9C2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +51,13 @@
 		3AF419A02173A579008E9C2A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3AF419A32173B9BA008E9C2A /* HyTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyTableView.h; sourceTree = "<group>"; };
 		3AF419A42173B9BA008E9C2A /* HyTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyTableView.m; sourceTree = "<group>"; };
+		3AF419A62173E248008E9C2A /* HyDocumentCreator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HyDocumentCreator.xib; sourceTree = "<group>"; };
+		3AF419A82173E811008E9C2A /* HyDocumentCreatorWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyDocumentCreatorWindowController.h; sourceTree = "<group>"; };
+		3AF419A92173E811008E9C2A /* HyDocumentCreatorWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyDocumentCreatorWindowController.m; sourceTree = "<group>"; };
+		3AF419B0217430D5008E9C2A /* HyPostsCollectionsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyPostsCollectionsManager.h; sourceTree = "<group>"; };
+		3AF419B1217430D5008E9C2A /* HyPostsCollectionsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyPostsCollectionsManager.m; sourceTree = "<group>"; };
+		3AF419B321743309008E9C2A /* HyPostsCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyPostsCollection.h; sourceTree = "<group>"; };
+		3AF419B421743309008E9C2A /* HyPostsCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyPostsCollection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +93,10 @@
 				3AF4199C2173A12E008E9C2A /* Hyde.pch */,
 				3AF4198721732746008E9C2A /* HyUtilities.h */,
 				3AF4198821732746008E9C2A /* HyUtilities.m */,
+				3AF419B0217430D5008E9C2A /* HyPostsCollectionsManager.h */,
+				3AF419B1217430D5008E9C2A /* HyPostsCollectionsManager.m */,
+				3AF419B321743309008E9C2A /* HyPostsCollection.h */,
+				3AF419B421743309008E9C2A /* HyPostsCollection.m */,
 				3AF419992173A106008E9C2A /* HyConfigurationManager.h */,
 				3AF4199A2173A106008E9C2A /* HyConfigurationManager.m */,
 				3AF419A22173B99B008E9C2A /* Misc App Components & Stuff */,
@@ -104,7 +119,10 @@
 				3AF419852173264E008E9C2A /* HyDocumentController.m */,
 				3AF4196D2173235F008E9C2A /* HyMDDocument.h */,
 				3AF4196E2173235F008E9C2A /* HyMDDocument.m */,
-				3AF419702173235F008E9C2A /* Document.xib */,
+				3AF419702173235F008E9C2A /* HyMDDocument.xib */,
+				3AF419A62173E248008E9C2A /* HyDocumentCreator.xib */,
+				3AF419A82173E811008E9C2A /* HyDocumentCreatorWindowController.h */,
+				3AF419A92173E811008E9C2A /* HyDocumentCreatorWindowController.m */,
 			);
 			path = "Document Stuff";
 			sourceTree = "<group>";
@@ -195,8 +213,9 @@
 			files = (
 				3AF4199F2173A579008E9C2A /* Localizable.strings in Resources */,
 				3AF419742173235F008E9C2A /* Assets.xcassets in Resources */,
-				3AF419722173235F008E9C2A /* Document.xib in Resources */,
+				3AF419722173235F008E9C2A /* HyMDDocument.xib in Resources */,
 				3AF419772173235F008E9C2A /* MainMenu.xib in Resources */,
+				3AF419A72173E248008E9C2A /* HyDocumentCreator.xib in Resources */,
 				3AF4199621732E6B008E9C2A /* HyPreferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,10 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AF419B2217430D5008E9C2A /* HyPostsCollectionsManager.m in Sources */,
 				3AF4198921732746008E9C2A /* HyUtilities.m in Sources */,
 				3AF419A52173B9BA008E9C2A /* HyTableView.m in Sources */,
 				3AF4196F2173235F008E9C2A /* HyMDDocument.m in Sources */,
+				3AF419B521743309008E9C2A /* HyPostsCollection.m in Sources */,
 				3AF419862173264E008E9C2A /* HyDocumentController.m in Sources */,
+				3AF419AA2173E811008E9C2A /* HyDocumentCreatorWindowController.m in Sources */,
 				3AF4199B2173A106008E9C2A /* HyConfigurationManager.m in Sources */,
 				3AF4197A2173235F008E9C2A /* main.m in Sources */,
 				3AF4196C2173235F008E9C2A /* HyAppDelegate.m in Sources */,
@@ -222,12 +244,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3AF419702173235F008E9C2A /* Document.xib */ = {
+		3AF419702173235F008E9C2A /* HyMDDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3AF419712173235F008E9C2A /* Base */,
 			);
-			name = Document.xib;
+			name = HyMDDocument.xib;
 			sourceTree = "<group>";
 		};
 		3AF419752173235F008E9C2A /* MainMenu.xib */ = {

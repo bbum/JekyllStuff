@@ -69,12 +69,7 @@
                         <items>
                             <menuItem title="New Post" keyEquivalent="n" id="Was-JA-tGl">
                                 <connections>
-                                    <action selector="newFilePost:" target="-1" id="HXe-a8-qxU"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="New Directory Post" keyEquivalent="N" id="EoI-Aw-8cg">
-                                <connections>
-                                    <action selector="newDirectoryPost:" target="-1" id="eVI-He-eDT"/>
+                                    <action selector="newDocument:" target="-1" id="4ee-gC-cIK"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">

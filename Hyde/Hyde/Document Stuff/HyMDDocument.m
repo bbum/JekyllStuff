@@ -7,9 +7,11 @@
 //
 
 #import "HyMDDocument.h"
+#import "HyDocumentCreatorWindowController.h"
 
 @interface HyMDDocument ()
-
+@property(nonatomic, readwrite, assign) BOOL isNewDocument;
+@property(nonatomic, readwrite, strong) HyDocumentCreatorWindowController *documentCreatorWindowController;
 @end
 
 @implementation HyMDDocument
@@ -22,17 +24,36 @@
     return self;
 }
 
+- (nullable instancetype)initWithType:(NSString *)typeName error:(NSError **)outError
+{
+    if (self = [super initWithType:typeName error:outError]) {
+        _isNewDocument = YES;
+    }
+    
+    return self;
+}
+
 + (BOOL)autosavesInPlace {
     return YES;
 }
 
-
 - (NSString *)windowNibName {
-    // Override returning the nib file name of the document
-    // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
-    return @"Document";
+    return @"HyMDDocument";
 }
 
+- (void)windowDidBecomeKey:(NSNotification *)notification;
+{
+    if (_isNewDocument) {
+        _documentCreatorWindowController = [HyDocumentCreatorWindowController documentCreatorWindowController];
+        _isNewDocument = NO;
+        [self.windowForSheet beginSheet:_documentCreatorWindowController.window completionHandler:^(NSModalResponse returnCode) {
+            os_log_info(HyDefaultLog(), "%s %ld", __PRETTY_FUNCTION__, (long)returnCode);
+            if (returnCode != NSModalResponseOK) {
+                [self close];
+            }
+        }];
+    }
+}
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError {
     // Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.

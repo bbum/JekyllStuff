@@ -7,17 +7,9 @@
 //
 
 #import "HyDocumentController.h"
-#import "HyUtilities.h"
+
+@interface HyDocumentController()
+@end
 
 @implementation HyDocumentController
-- (IBAction)newFilePost:(nullable id)sender
-{
-    os_log_info(HyDefaultLog(), "%s", __PRETTY_FUNCTION__);
-}
-
-- (IBAction)newDirectoryPost:(nullable id)sender
-{
-    os_log_info(HyDefaultLog(), "%s", __PRETTY_FUNCTION__);
-}
-
 @end
