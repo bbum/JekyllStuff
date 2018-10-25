@@ -12,5 +12,7 @@
 @interface HyPostsCollectionsManager : NSObject
 + (HyPostsCollectionsManager *)sharedPostManager;
 
-@property(readonly, nonatomic) NSArray<HyPostsCollection *>* postsCollections;
+- (NSArray<HyPostsCollection *>*) postsCollections; // observeable
+- (void)addPostCollections:(NSArray<NSURL *>*)urls;
+- (void)removePostsCollections:(NSArray<HyPostsCollection *>*)postsCollections;
 @end

@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface HyPostsCollection : NSObject
+@property(readonly) NSURL *URL;
 
+- (NSComparisonResult) compareURLs:(HyPostsCollection *)other;
+
+@property(readonly, copy) NSString *stringValueForDisplay;
 @end

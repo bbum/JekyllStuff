@@ -8,12 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-// observers must be prepared to deal w/multiple notifications in regards to same change
-extern NSString *HyPostLocationsDidChangeNotificationName;
-
 @interface HyConfigurationManager : NSObject
 + (HyConfigurationManager *) sharedConfigurationManager;
-
-@property(copy, atomic) NSArray<NSURL *>* postLocations;
-- (void)addPostLocationsIfAbsent:(NSArray <NSURL *>*)locations;
 @end

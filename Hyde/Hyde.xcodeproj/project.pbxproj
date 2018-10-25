@@ -24,6 +24,7 @@
 		3AF419AA2173E811008E9C2A /* HyDocumentCreatorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF419A92173E811008E9C2A /* HyDocumentCreatorWindowController.m */; };
 		3AF419B2217430D5008E9C2A /* HyPostsCollectionsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF419B1217430D5008E9C2A /* HyPostsCollectionsManager.m */; };
 		3AF419B521743309008E9C2A /* HyPostsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF419B421743309008E9C2A /* HyPostsCollection.m */; };
+		779E278E217670890014C93E /* HyPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 779E278D217670890014C93E /* HyPost.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,10 @@
 		3AF419B1217430D5008E9C2A /* HyPostsCollectionsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyPostsCollectionsManager.m; sourceTree = "<group>"; };
 		3AF419B321743309008E9C2A /* HyPostsCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyPostsCollection.h; sourceTree = "<group>"; };
 		3AF419B421743309008E9C2A /* HyPostsCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyPostsCollection.m; sourceTree = "<group>"; };
+		779E278C217670890014C93E /* HyPost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HyPost.h; sourceTree = "<group>"; };
+		779E278D217670890014C93E /* HyPost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HyPost.m; sourceTree = "<group>"; };
+		779E278F2176712E0014C93E /* HyPostsCollection+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HyPostsCollection+Internal.h"; sourceTree = "<group>"; };
+		779E2790217671930014C93E /* HyPost+Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HyPost+Internal.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +98,7 @@
 				3AF4199C2173A12E008E9C2A /* Hyde.pch */,
 				3AF4198721732746008E9C2A /* HyUtilities.h */,
 				3AF4198821732746008E9C2A /* HyUtilities.m */,
-				3AF419B0217430D5008E9C2A /* HyPostsCollectionsManager.h */,
-				3AF419B1217430D5008E9C2A /* HyPostsCollectionsManager.m */,
-				3AF419B321743309008E9C2A /* HyPostsCollection.h */,
-				3AF419B421743309008E9C2A /* HyPostsCollection.m */,
+				779E278B21766AF00014C93E /* Posts Management Stuff */,
 				3AF419992173A106008E9C2A /* HyConfigurationManager.h */,
 				3AF4199A2173A106008E9C2A /* HyConfigurationManager.m */,
 				3AF419A22173B99B008E9C2A /* Misc App Components & Stuff */,
@@ -148,6 +150,21 @@
 			path = "Misc App Components & Stuff";
 			sourceTree = "<group>";
 		};
+		779E278B21766AF00014C93E /* Posts Management Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				3AF419B0217430D5008E9C2A /* HyPostsCollectionsManager.h */,
+				3AF419B1217430D5008E9C2A /* HyPostsCollectionsManager.m */,
+				3AF419B321743309008E9C2A /* HyPostsCollection.h */,
+				779E278F2176712E0014C93E /* HyPostsCollection+Internal.h */,
+				3AF419B421743309008E9C2A /* HyPostsCollection.m */,
+				779E278C217670890014C93E /* HyPost.h */,
+				779E2790217671930014C93E /* HyPost+Internal.h */,
+				779E278D217670890014C93E /* HyPost.m */,
+			);
+			path = "Posts Management Stuff";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,7 +191,7 @@
 		3AF4195F2173235F008E9C2A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Bill Bumgarner";
 				TargetAttributes = {
 					3AF419662173235F008E9C2A = {
@@ -237,6 +254,7 @@
 				3AF4199B2173A106008E9C2A /* HyConfigurationManager.m in Sources */,
 				3AF4197A2173235F008E9C2A /* main.m in Sources */,
 				3AF4196C2173235F008E9C2A /* HyAppDelegate.m in Sources */,
+				779E278E217670890014C93E /* HyPost.m in Sources */,
 				3AF4199421732BDB008E9C2A /* HyPreferencesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +311,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -300,6 +319,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -348,6 +368,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -355,6 +376,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

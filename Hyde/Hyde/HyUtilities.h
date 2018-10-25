@@ -10,3 +10,6 @@
 #import <os/log.h>
 
 extern os_log_t HyDefaultLog(void);
+
+#define HyValidatedKeyPath(o, kp) ((1) ? @#kp : ((o).kp, @""))
+

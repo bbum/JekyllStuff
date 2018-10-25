@@ -11,12 +11,16 @@
 
 #import <Cocoa/Cocoa.h>
 
+// Utilities and Tools
 #import "HyUtilities.h"
 #import "HyConfigurationManager.h"
+
+// Post Stuff
 #import "HyPostsCollectionsManager.h"
 #import "HyPostsCollection.h"
+#import "HyPost.h"
 
-
+// Reusuable components
 #import "HyTableView.h"
 
 #endif /* Hyde_pch */

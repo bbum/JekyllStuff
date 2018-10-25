@@ -8,9 +8,10 @@
 
 #import "HyPreferencesWindowController.h"
 
+static void *_HyPrefsPostsLocationObservationContext = &_HyPrefsPostsLocationObservationContext;
+
 @interface HyPreferencesWindowController () <NSTableViewDataSource, NSTableViewDelegate>
 @property (weak) IBOutlet NSTableView *postLocationsTableView;
-
 @end
 
 @implementation HyPreferencesWindowController
@@ -27,12 +28,22 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postLocationsDidChangeNotification:) name:HyPostLocationsDidChangeNotificationName object:nil];
+    HyPostsCollectionsManager *postsCollectionManager = [HyPostsCollectionsManager sharedPostManager];
+	[postsCollectionManager addObserver:self forKeyPath:HyValidatedKeyPath(postsCollectionManager, postsCollections) options:0 context:_HyPrefsPostsLocationObservationContext];
 }
 
-- (void)postLocationsDidChangeNotification:(NSNotification *)notification
+- (void)dealloc
 {
-    [self.postLocationsTableView reloadData];
+    HyPostsCollectionsManager *postsCollectionManager = [HyPostsCollectionsManager sharedPostManager];
+    [postsCollectionManager removeObserver:self forKeyPath:HyValidatedKeyPath(postsCollectionManager, postsCollections) context:_HyPrefsPostsLocationObservationContext];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+	if (context == &_HyPrefsPostsLocationObservationContext)
+		[self.postLocationsTableView reloadData];
+	else
+		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 }
 
 - (IBAction)addPostLocationAction:(id)sender
@@ -46,7 +57,7 @@
     [openPanel beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse result) {
         if (result != NSModalResponseOK)
             return;
-        [[HyConfigurationManager sharedConfigurationManager] addPostLocationsIfAbsent:openPanel.URLs];
+        [[HyPostsCollectionsManager sharedPostManager] addPostCollections:openPanel.URLs];
     }];
 }
 
@@ -60,13 +71,10 @@
     NSIndexSet *selectedRowIndexes = self.postLocationsTableView.selectedRowIndexes;
     if (!selectedRowIndexes.count)
         return;
-    
-    NSMutableArray *newPostLocations = [[[HyConfigurationManager sharedConfigurationManager] postLocations] mutableCopy];
-    [selectedRowIndexes enumerateIndexesWithOptions:NSEnumerationReverse usingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
-        [newPostLocations removeObjectAtIndex:idx];
-    }];
-    
-    [[HyConfigurationManager sharedConfigurationManager] setPostLocations:newPostLocations];
+
+	NSArray<HyPostsCollection *>* postsCollections = [[HyPostsCollectionsManager sharedPostManager] postsCollections];
+	NSArray<HyPostsCollection *>* collectionsToRemove = [postsCollections objectsAtIndexes:selectedRowIndexes];
+	[[HyPostsCollectionsManager sharedPostManager] removePostsCollections:collectionsToRemove];
 }
 
 - (IBAction)delete:sender
@@ -78,12 +86,13 @@
 #pragma mark - NSTableViewDataSource
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return [[[HyConfigurationManager sharedConfigurationManager] postLocations] count];
+    return [[[HyPostsCollectionsManager sharedPostManager] postsCollections] count];
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    NSURL *value = [[[HyConfigurationManager sharedConfigurationManager] postLocations] objectAtIndex:row];
-    return value.path;
+    HyPostsCollection *postCollection = [[[HyPostsCollectionsManager sharedPostManager] postsCollections] objectAtIndex:row];
+    return postCollection.stringValueForDisplay;
 }
 @end
+

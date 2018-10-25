@@ -23,7 +23,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    if ([[[HyConfigurationManager sharedConfigurationManager] postLocations] count] == 0) {
+    if ([[[HyPostsCollectionsManager sharedPostManager] postsCollections] count] == 0) {
         [self showPreferences:nil];
     }
 }
