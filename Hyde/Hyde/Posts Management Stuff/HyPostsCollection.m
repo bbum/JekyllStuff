@@ -9,6 +9,8 @@
 #import "HyPostsCollection.h"
 #import "HyPostsCollection+Internal.h"
 
+NSErrorDomain const HyPostsCollectionErrorDomain = @"HyPostsCollectionErrorDomain";
+
 @implementation HyPostsCollection
 + (instancetype)postsCollectionWithContentsOfURL:(NSURL*)postsDirectoryURL
 {
@@ -31,5 +33,13 @@
 -(NSString *)stringValueForDisplay
 {
 	return _URL.absoluteString;
+}
+
++ (HyPost * _Nullable ) createPostWithDate:(NSDate *)date title:(NSString *)title hasAttachments:(BOOL)attachments error:(NSError **)error
+{
+    if (error) {
+        *error = [NSError errorWithDomain:HyPostsCollectionErrorDomain code:HyPostExistsError userInfo:@{}];
+    }
+    return nil;
 }
 @end
