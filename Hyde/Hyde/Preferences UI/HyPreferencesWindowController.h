@@ -9,5 +9,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface HyPreferencesWindowController : NSWindowController
-+ (HyPreferencesWindowController *) sharedHyPreferencesWindowController;
++ (HyPreferencesWindowController * _Nonnull) sharedHyPreferencesWindowController;
 @end

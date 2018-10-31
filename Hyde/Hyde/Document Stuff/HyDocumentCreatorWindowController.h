@@ -9,5 +9,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface HyDocumentCreatorWindowController : NSWindowController
-+ (instancetype)documentCreatorWindowController;
++ (instancetype _Nonnull)documentCreatorWindowController;
 @end

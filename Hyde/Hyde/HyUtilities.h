@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <os/log.h>
 
-extern os_log_t HyDefaultLog(void);
+extern os_log_t _Nonnull HyDefaultLog(void);
 
-#define HyValidatedKeyPath(o, kp) ((1) ? @#kp : ((o).kp, @""))
+#define HyValidatedKeyPath(object, keyPathAsBareString) ((1) ? @#keyPathAsBareString : ((object).keyPathAsBareString, @"mmm... compiler trickery"))
 

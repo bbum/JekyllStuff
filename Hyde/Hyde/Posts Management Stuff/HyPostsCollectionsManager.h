@@ -10,9 +10,9 @@
 
 @class HyPostsCollection;
 @interface HyPostsCollectionsManager : NSObject
-+ (HyPostsCollectionsManager *)sharedPostManager;
++ (HyPostsCollectionsManager * _Nonnull)sharedPostManager;
 
-- (NSArray<HyPostsCollection *>*) postsCollections; // observeable
-- (void)addPostCollections:(NSArray<NSURL *>*)urls;
-- (void)removePostsCollections:(NSArray<HyPostsCollection *>*)postsCollections;
+- (NSArray<HyPostsCollection *>*_Nonnull) postsCollections; // observeable
+- (void)addPostCollections:(NSArray<NSURL *>*_Nonnull)urls;
+- (void)removePostsCollections:(NSArray<HyPostsCollection *>*_Nonnull)postsCollections;
 @end

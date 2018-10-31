@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface HyConfigurationManager : NSObject
-+ (HyConfigurationManager *) sharedConfigurationManager;
++ (HyConfigurationManager * _Nonnull) sharedConfigurationManager;
 @end

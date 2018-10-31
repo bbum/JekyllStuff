@@ -10,7 +10,7 @@
 #define HyPost_Internal_h
 
 @interface HyPost()
-+ (instancetype) postWithURL:(NSURL*)url;
++ (instancetype _Nonnull) postWithURL:(NSURL *_Nonnull)url;
 @end
 
 #endif /* HyPost_Internal_h */

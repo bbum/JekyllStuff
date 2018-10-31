@@ -12,7 +12,7 @@
 #import "HyPostsCollection.h"
 
 @interface HyPostsCollection()
-+ (instancetype)postsCollectionWithContentsOfURL:(NSURL*)postsDirectoryURL;
++ (instancetype _Nonnull)postsCollectionWithContentsOfURL:(NSURL * _Nonnull)postsDirectoryURL;
 @end
 
 #endif /* HyPostsCollection_Internal_h */

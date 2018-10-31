@@ -9,6 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface HyAppDelegate : NSObject <NSApplicationDelegate>
-- (IBAction)showPreferences:(nullable id)sender;
+- (IBAction)showPreferences:(id _Nullable)sender;
 @end
 

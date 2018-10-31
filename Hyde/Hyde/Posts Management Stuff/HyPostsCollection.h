@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSErrorDomain const HyPostsCollectionErrorDomain;
+extern NSErrorDomain _Nonnull const HyPostsCollectionErrorDomain;
 
 NS_ERROR_ENUM(HyPostsCollectionErrorDomain) {
     HyPostExistsError = 40, // attempt to create new post, but post with that name/date already exists
@@ -16,11 +16,14 @@ NS_ERROR_ENUM(HyPostsCollectionErrorDomain) {
 
 @class HyPost;
 @interface HyPostsCollection : NSObject
-@property(readonly) NSURL *URL;
+@property(readonly) NSURL * _Nonnull URL;
 
-- (NSComparisonResult) compareURLs:(HyPostsCollection *)other;
+- (NSComparisonResult) compareURLs:(HyPostsCollection *_Nonnull)other;
 
-@property(readonly, copy) NSString *stringValueForDisplay;
+@property(readonly, copy) NSString * _Nonnull stringValueForDisplay;
 
-+ (HyPost * _Nullable ) createPostWithDate:(NSDate *)date title:(NSString *)title hasAttachments:(BOOL)attachments error:(NSError **)error;
++ (HyPost * _Nullable ) createPostWithDate:(NSDate *_Nonnull)date
+                                     title:(NSString *_Nullable)title
+                            hasAttachments:(BOOL)attachments
+                                     error:(NSError *_Nullable*_Nullable)error;
 @end
